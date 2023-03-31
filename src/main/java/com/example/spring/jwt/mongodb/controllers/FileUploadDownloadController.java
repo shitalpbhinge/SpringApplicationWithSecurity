@@ -81,7 +81,7 @@ public class FileUploadDownloadController
 	}
 	@GetMapping("/downloadFile")
 	public ResponseEntity<Resource> downloadFile() throws IOException {
-	    String filePath = "/home/inferyx/Downloads/MySqlCurd/src/main/resources/static/image/bc.txt";
+	    String filePath = "/home/inferyx/git/SpringApplicationWithSecurity/src/main/resources/static/image/bc.txt";
 	    Resource resource = new FileSystemResource(filePath);
 	    //File file = resource.getFile();
 
