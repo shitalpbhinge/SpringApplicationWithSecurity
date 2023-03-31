@@ -16,7 +16,7 @@ import com.example.spring.jwt.mongodb.service.EmailService;
 
 @CrossOrigin("http://localhost:8080")
 @RestController
-@RequestMapping("/v1/mongodbapp")
+@RequestMapping("apiMail")
 	public class EmailController 
 	{
 		//private static final Logger logger = LoggerFactory.getLogger(EmailDemoApplication .class);
