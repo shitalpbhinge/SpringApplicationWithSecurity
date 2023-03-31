@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -31,6 +34,7 @@ import com.example.spring.jwt.mongodb.entity.FileUploadHelper;
 @RequestMapping("/apifile")
 public class FileUploadDownloadController 
 {
+	private static final Logger logger = LoggerFactory.getLogger(FileUploadDownloadController.class);
 	@Autowired
 	private FileUploadHelper fileUploadHelper;
 	private final ResourceLoader resourceLoader;
@@ -48,7 +52,7 @@ public class FileUploadDownloadController
 			//validation
 			if(file.isEmpty())
 			{
-				//logger.warn("Request must contain a file");
+				logger.warn("Request must contain a file");
 				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Request must contain a file");
 			}
 			//
@@ -61,7 +65,7 @@ public class FileUploadDownloadController
 			boolean f=fileUploadHelper.uploadFile(file);
 			if(f) 
 			{
-				//logger.info("File uploaded ");
+				logger.info("File uploaded ");
 				return ResponseEntity.ok("File Uploaded.....");
 			}
 		
@@ -71,7 +75,7 @@ public class FileUploadDownloadController
 		{
 			e.printStackTrace();
 		}
-		//logger.error("try again");
+		logger.error("try again");
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("try agrain...");
 		
 	}
@@ -83,7 +87,7 @@ public class FileUploadDownloadController
 
 	    if (!resource.exists()) 
 	    {
-	    	//logger.warn("FIle not found");
+	    	logger.warn("File not found");
 	        throw new FileNotFoundException("File not found");
 	    }
 
@@ -122,20 +126,20 @@ public class FileUploadDownloadController
 	@GetMapping("/directoryStructure")
 	public List<List<String>> getDirectory(@RequestParam("path") String path) throws Exception {
 	   
-	 //logger.info("inside method get directory");
+	logger.info("inside method get directory");
 	   
 	 //logger.info("acquiring directory path");
 	    File directory = new File(path);
 	// logger.info("directory path acquired");
-	// logger.info("Getting contents of directory");
+	 logger.info("Getting contents of directory");
 	    String[] contents = directory.list();
 	    if (contents == null) {
-	 /// logger.error("Failed to acquire content of directory");
+	  logger.error("Failed to acquire content of directory");
 	    }
-	  // logger.info("content acquired");
+	   logger.info("content acquired");
 	    List<String> folders = new ArrayList<>();
 	    List<String> files = new ArrayList<>();
-	  //  logger.info("sorting content into file and directory");
+	   logger.info("sorting content into file and directory");
 	    for (String content : contents) {
 	        File f = new File(directory, content);
 	        if (f.isDirectory()) {
@@ -147,7 +151,7 @@ public class FileUploadDownloadController
 	    List<List<String>> result = new ArrayList<>();
 	    result.add(folders);
 	    result.add(files);
-	  // logger.info("Sorting success");
+	   logger.info("Sorting success");
 	    return result;
 	}
 

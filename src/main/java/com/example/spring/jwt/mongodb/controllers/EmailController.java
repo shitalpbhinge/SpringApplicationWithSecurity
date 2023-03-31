@@ -1,6 +1,8 @@
 package com.example.spring.jwt.mongodb.controllers;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +21,7 @@ import com.example.spring.jwt.mongodb.service.EmailService;
 @RequestMapping("apiMail")
 	public class EmailController 
 	{
-		//private static final Logger logger = LoggerFactory.getLogger(EmailDemoApplication .class);
+		private static final Logger logger = LoggerFactory.getLogger(EmailController .class);
 	    @Autowired
 	    private EmailService emailService;
 
@@ -27,14 +29,15 @@ import com.example.spring.jwt.mongodb.service.EmailService;
 	    @PostMapping("/sendingemail")
 	    public ResponseEntity<?> sendEmail(@RequestBody EmailRequest request)
 	    {
-	    	//logger.info("mail send Successfully.");
+	    	logger.info("mail send Successfully.");
+	    	
 	        System.out.println(request);
 	        
 
 	        boolean result = this.emailService.sendEmail(request.getSubject(), request.getMessage(), request.getTo());
 
 	        if(result){
-
+	        	
 	           return  ResponseEntity.ok("Email Properly Sent Successfully... ");
 
 	        }else{
@@ -42,25 +45,4 @@ import com.example.spring.jwt.mongodb.service.EmailService;
 	            return  ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("email sending fail");
 	        }
 	    }
-
-	    //this api send email with file
-	  @PostMapping("/sendemailattachement")
-	    public ResponseEntity<?> sendEmailWithAttachment(@RequestBody EmailRequest request)
-	    {
-	    	//logger.info("Sent Email With Attchment Successfully... ");
-	        System.out.println(request);
-
-	        boolean result = this.emailService.sendWithAttachment(request.getSubject(), request.getMessage(), request.getTo());
-
-	        if(result){
-
-	            return  ResponseEntity.ok("Sent Email With Attchment Successfully... ");
-
-	        }else{
-
-	            return  ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("attachment email sending fail");
-	        }
-
-	    }
-
 }
