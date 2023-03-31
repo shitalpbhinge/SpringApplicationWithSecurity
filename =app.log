@@ -218,3 +218,98 @@
 2023-03-31 11:16:18,455 INFO org.mongodb.driver.connection [http-nio-8080-exec-2] Opened connection [connectionId{localValue:3, serverValue:27}] to localhost:27017
 2023-03-31 11:16:18,644 INFO com.example.spring.jwt.mongodb.controllers.EmailController [http-nio-8080-exec-2] mail send Successfully.
 2023-03-31 11:20:29,508 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-5] File uploaded 
+2023-03-31 11:27:38,717 ERROR com.example.spring.jwt.mongodb.security.jwt.AuthEntryPointJwt [http-nio-8080-exec-8] Unauthorized error: Full authentication is required to access this resource
+2023-03-31 11:27:46,202 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-9] inside method get directory
+2023-03-31 11:27:46,203 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-9] Getting contents of directory
+2023-03-31 11:27:46,204 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-9] content acquired
+2023-03-31 11:27:46,205 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-9] sorting content into file and directory
+2023-03-31 11:27:46,206 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-9] Sorting success
+2023-03-31 11:28:19,226 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [main] Starting SpringBootSecurityJwtMongodbApplication using Java 17.0.6 on wks-012 with PID 10724 (/home/inferyx/git/SpringApplicationWithSecurity/target/classes started by inferyx in /home/inferyx/git/SpringApplicationWithSecurity)
+2023-03-31 11:28:19,237 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-03-31 11:28:21,186 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-03-31 11:28:21,187 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-31 11:28:21,319 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-03-31 11:28:21,555 INFO org.mongodb.driver.client [main] MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-69-generic"}, "platform": "Java/Eclipse Adoptium/17.0.6+10"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@61615b4a]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-03-31 11:28:21,602 INFO org.mongodb.driver.connection [cluster-ClusterId{value='6426767d8782c0429838ec65', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:28}] to localhost:27017
+2023-03-31 11:28:21,603 INFO org.mongodb.driver.connection [cluster-rtt-ClusterId{value='6426767d8782c0429838ec65', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:29}] to localhost:27017
+2023-03-31 11:28:21,603 INFO org.mongodb.driver.cluster [cluster-ClusterId{value='6426767d8782c0429838ec65', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=55973153}
+2023-03-31 11:28:23,014 INFO org.apache.catalina.core.StandardService [main] Stopping service [Tomcat]
+2023-03-31 11:28:23,024 WARN org.apache.catalina.loader.WebappClassLoaderBase [main] The web application [ROOT] appears to have started a thread named [BufferPoolPruner-1-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-03-31 11:28:23,073 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-03-31 11:28:25,544 INFO org.apache.catalina.core.StandardService [RMI TCP Connection(21)-127.0.0.1] Stopping service [Tomcat]
+2023-03-31 11:28:25,547 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [RMI TCP Connection(21)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-03-31 11:28:25,557 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(21)-127.0.0.1] The web application [ROOT] appears to have started a thread named [BufferPoolPruner-1-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-03-31 11:28:25,558 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(21)-127.0.0.1] The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6426738579a7e02d3c3363e0', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(DefaultServerMonitor.java:300)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:281)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:179)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-03-31 11:28:25,560 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(21)-127.0.0.1] The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='6426738579a7e02d3c3363e0', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.waitForNext(DefaultServerMonitor.java:443)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.access$1500(DefaultServerMonitor.java:64)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeRunnable.run(DefaultServerMonitor.java:415)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-03-31 11:28:25,561 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(21)-127.0.0.1] The web application [ROOT] appears to have started a thread named [MaintenanceTimer-2-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-03-31 11:28:30,248 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [main] Starting SpringBootSecurityJwtMongodbApplication using Java 17.0.6 on wks-012 with PID 10788 (/home/inferyx/git/SpringApplicationWithSecurity/target/classes started by inferyx in /home/inferyx/git/SpringApplicationWithSecurity)
+2023-03-31 11:28:30,257 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-03-31 11:28:32,292 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-03-31 11:28:32,293 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-31 11:28:32,448 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-03-31 11:28:32,709 INFO org.mongodb.driver.client [main] MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-69-generic"}, "platform": "Java/Eclipse Adoptium/17.0.6+10"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@5482bcac]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-03-31 11:28:32,747 INFO org.mongodb.driver.connection [cluster-ClusterId{value='64267688a890e94db5ebf56d', description='null'}-localhost:27017] Opened connection [connectionId{localValue:1, serverValue:31}] to localhost:27017
+2023-03-31 11:28:32,748 INFO org.mongodb.driver.cluster [cluster-ClusterId{value='64267688a890e94db5ebf56d', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=36494522}
+2023-03-31 11:28:32,754 INFO org.mongodb.driver.connection [cluster-rtt-ClusterId{value='64267688a890e94db5ebf56d', description='null'}-localhost:27017] Opened connection [connectionId{localValue:2, serverValue:30}] to localhost:27017
+2023-03-31 11:28:34,333 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [main] Started SpringBootSecurityJwtMongodbApplication in 4.728 seconds (JVM running for 5.903)
+2023-03-31 11:28:34,338 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [main] This is a info message
+2023-03-31 11:28:34,339 WARN com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [main] This is a warn message
+2023-03-31 11:28:37,560 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-31 11:28:37,765 INFO org.mongodb.driver.connection [http-nio-8080-exec-1] Opened connection [connectionId{localValue:3, serverValue:32}] to localhost:27017
+2023-03-31 11:28:37,899 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-1] inside method get directory
+2023-03-31 11:28:37,900 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-1] Getting contents of directory
+2023-03-31 11:28:37,901 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-1] content acquired
+2023-03-31 11:28:37,902 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-1] sorting content into file and directory
+2023-03-31 11:28:37,903 INFO com.example.spring.jwt.mongodb.controllers.FileUploadDownloadController [http-nio-8080-exec-1] Sorting success
