@@ -33,7 +33,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
-
+	public static final String [] URL_ACCESS = {"/api/test/**","/webjars/**","/swagger-resourses/**","/api-docs/**","/v2/api-docs/**","/v3/api-docs/**","/swagger-ui/**","/api/auth/**"};
 	@Bean
 	public AuthTokenFilter authenticationJwtTokenFilter() {
 		return new AuthTokenFilter();
@@ -89,6 +89,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
         .authorizeRequests().antMatchers("/api/auth/**").permitAll()
         .antMatchers("/api/test/**").permitAll()
+        .antMatchers(URL_ACCESS).permitAll()
         .anyRequest().authenticated();
     
     http.authenticationProvider(authenticationProvider());
