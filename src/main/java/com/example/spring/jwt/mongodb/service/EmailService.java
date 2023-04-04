@@ -1,5 +1,4 @@
 package com.example.spring.jwt.mongodb.service;
-
 import java.util.Properties;
 import javax.mail.internet.MimeMessage;
 import javax.mail.Authenticator;
@@ -22,8 +21,8 @@ public class EmailService
 	{
 	    boolean foo = false; // Set the false, default variable "foo", we will allow it after sending code process email
 
-	    String senderEmail = "shitalbhinge29@gmail.com"; // your gmail email id
-	    String senderPassword = "sglbgeuqjxdxtkaq"; // your gmail id password
+	    String senderEmail = "shital.shivajipoly@gmail.com"; // your gmail email id
+	    String senderPassword = "vbvzdwuigrbpflfy"; // your gmail id password
 
 	    // Properties class enables us to connect to the host SMTP server
 	    Properties properties = new Properties();
@@ -44,7 +43,6 @@ public class EmailService
 				return new PasswordAuthentication(senderEmail, senderPassword);
 	        }
 	    });
-	   
 
 	    try {
 
@@ -58,7 +56,7 @@ public class EmailService
 	        msg.setText(message); // adding text to msg object
 
 	        Transport.send(msg); // Transport class send the message using send() method
-	        //System.out.println("Email Sent Wtih Attachment Successfully...");
+	        System.out.println("Email Sent Wtih Attachment Successfully...");
 
 	        foo = true; // Set the "foo" variable to true after successfully sending emails
 
@@ -68,6 +66,5 @@ public class EmailService
 	    }
 
 	    return foo; // and return foo variable
-	 }
+	 }	
 }
-	

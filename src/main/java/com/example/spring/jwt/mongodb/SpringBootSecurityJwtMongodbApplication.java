@@ -1,5 +1,7 @@
 package com.example.spring.jwt.mongodb;
 
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +17,15 @@ public class SpringBootSecurityJwtMongodbApplication
 		logger.info("This is a info message");
 		  logger.debug("This is a debug message");
 		  logger.warn("This is a warn message");
+		  Set<Thread> threads = Thread.getAllStackTraces().keySet();
+	         
+	        for (Thread t : threads) {
+	            String name = t.getName();
+	            Thread.State state = t.getState();
+	            int priority = t.getPriority();
+	            String type = t.isDaemon() ? "Daemon" : "Normal";
+	            System.out.printf("%-20s \t %s \t %d \t %s\n", name, state, priority, type);
+	        }
 	}
 
 }

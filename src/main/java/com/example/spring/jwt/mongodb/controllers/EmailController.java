@@ -14,29 +14,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.spring.jwt.mongodb.entity.EmailRequest;
 import com.example.spring.jwt.mongodb.service.EmailService;
 
-
 @CrossOrigin("http://localhost:8080")
 @RestController
-@RequestMapping("apiMail")
+@RequestMapping("/v1/mongodbapp")
+	
 	public class EmailController 
 	{
 		private static final Logger logger = LoggerFactory.getLogger(EmailController .class);
 	    @Autowired
 	    private EmailService emailService;
-
-	    //this api send simple email
+	   	    
+		//this api send simple email
 	    @PostMapping("/sendingemail")
 	    public ResponseEntity<?> sendEmail(@RequestBody EmailRequest request)
 	    {
 	    	logger.info("mail send Successfully.");
-	    	
 	        System.out.println(request);
 	        
 
 	        boolean result = this.emailService.sendEmail(request.getSubject(), request.getMessage(), request.getTo());
 
 	        if(result){
-	        	
+
 	           return  ResponseEntity.ok("Email Properly Sent Successfully... ");
 
 	        }else{
@@ -44,4 +43,6 @@ import com.example.spring.jwt.mongodb.service.EmailService;
 	            return  ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("email sending fail");
 	        }
 	    }
+
+	   
 }
