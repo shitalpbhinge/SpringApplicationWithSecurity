@@ -26,13 +26,13 @@ public class UserApiConfig {
     public OpenAPI springShopOpenAPI() {
           final String securitySchemeName = "bearerAuth";
         return new OpenAPI()
-                .info(new Info().title("Email File APIs")
+                .info(new Info().title("Spring Application with Security  APIs")
                 .description("Thread Email and File operation sample application")
                 .version("v0.0.1")
                 .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
                 .description("Mail Documentation")
-                .url("https://github.com/Prat11k/EmailDemo"))
+                .url("https://github.com/shitalpbhinge/SpringApplicationWithSecurity"))
                 .addSecurityItem(new SecurityRequirement()
                         .addList(securitySchemeName))
                       .components(new Components()
