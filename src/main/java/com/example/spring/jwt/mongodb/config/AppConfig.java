@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.example.spring.jwt.mongodb.factory.ScriptExecutionFactory;
+
 
 
 @Configuration
@@ -23,8 +25,8 @@ public class AppConfig
         return "myStringBeanValue";
     }
     // other configuration beans and methods...
-    @Bean
+  /*  @Bean
     public Logger getLogger() {
         return LoggerFactory.getLogger(PythonScriptExecutor.class);
-    }
+    }*/
 }

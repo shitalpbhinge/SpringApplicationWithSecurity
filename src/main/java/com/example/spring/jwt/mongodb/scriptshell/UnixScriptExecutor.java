@@ -6,9 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.example.spring.jwt.mongodb.exception.ScriptExecutionException;
+import com.example.spring.jwt.mongodb.interfaces.ScriptExecutor;
+
 import java.io.BufferedReader;
-import com.example.SciptShell.factory.ScriptExecutionException;
-import com.example.SciptShell.service.ScriptExecutor;
+
 @Component
 public class UnixScriptExecutor implements ScriptExecutor {
 	private static final Logger logger = LoggerFactory.getLogger(UnixScriptExecutor .class);

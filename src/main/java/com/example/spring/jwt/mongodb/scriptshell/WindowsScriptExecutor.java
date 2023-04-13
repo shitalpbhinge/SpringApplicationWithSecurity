@@ -6,10 +6,12 @@ import java.io.InputStreamReader;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
 
+import com.example.spring.jwt.mongodb.exception.ScriptExecutionException;
+import com.example.spring.jwt.mongodb.interfaces.ScriptExecutor;
+
 import java.io.BufferedReader;
 
-import com.example.SciptShell.factory.ScriptExecutionException;
-import com.example.SciptShell.service.ScriptExecutor;
+
 @Component
 public class WindowsScriptExecutor implements ScriptExecutor {
 

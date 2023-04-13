@@ -8,9 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.SciptShell.factory.ScriptExecutionException;
-import com.example.SciptShell.factory.ScriptExecutionFactory;
-import com.example.SciptShell.service.ScriptExecutor;
+import com.example.spring.jwt.mongodb.factory.ScriptExecutionFactory;
+import com.example.spring.jwt.mongodb.interfaces.ScriptExecutor;
+
+;
 
 @RestController
 @RequestMapping("/api")
