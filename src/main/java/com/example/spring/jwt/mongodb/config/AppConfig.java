@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.example.spring.jwt.mongodb.factory.ScriptExecutionFactory;
-
+import com.example.spring.jwt.mongodb.scriptshell.PythonScriptExecutor;
 
 
 @Configuration
@@ -29,4 +29,8 @@ public class AppConfig
     public Logger getLogger() {
         return LoggerFactory.getLogger(PythonScriptExecutor.class);
     }*/
+	@Bean
+    public Logger logger() {
+        return LoggerFactory.getLogger(PythonScriptExecutor.class);
+    }
 }
