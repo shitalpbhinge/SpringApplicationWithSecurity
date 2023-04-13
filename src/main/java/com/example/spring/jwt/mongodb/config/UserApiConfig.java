@@ -27,7 +27,7 @@ public class UserApiConfig {
           final String securitySchemeName = "bearerAuth";
         return new OpenAPI()
                 .info(new Info().title("Spring Application with Security  APIs")
-                .description("Thread Email and File operation sample application")
+                .description("Thread Email and File operation sample application and Factory Design Pattern")
                 .version("v0.0.1")
                 .license(new License().name("Apache 2.0").url("http://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()

@@ -4589,3 +4589,118 @@ Consider defining a bean of type 'org.slf4j.Logger' in your configuration.
 2023-04-13 13:50:24,510 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] Started SpringBootSecurityJwtMongodbApplication in 3.057 seconds (JVM running for 336.167)
 2023-04-13 13:50:24,515 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] This is a info message
 2023-04-13 13:50:24,515 WARN com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] This is a warn message
+2023-04-13 13:56:40,415 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-13 13:56:40,422 ERROR com.example.spring.jwt.mongodb.security.jwt.AuthEntryPointJwt [http-nio-8080-exec-1] Unauthorized error: Full authentication is required to access this resource
+2023-04-13 13:57:09,159 INFO org.mongodb.driver.connection [http-nio-8080-exec-2] Opened connection [connectionId{localValue:5, serverValue:33}] to localhost:27017
+2023-04-13 13:57:29,133 INFO com.example.spring.jwt.mongodb.scriptshell.UnixScriptExecutor [http-nio-8080-exec-3] Executing Unix script: /home/inferyx/data.sh
+2023-04-13 13:57:29,134 INFO com.example.spring.jwt.mongodb.scriptshell.UnixScriptExecutor [http-nio-8080-exec-3] ProcessBuilder Started
+2023-04-13 13:57:29,139 INFO com.example.spring.jwt.mongodb.scriptshell.UnixScriptExecutor [http-nio-8080-exec-3] Process Started
+2023-04-13 13:57:29,140 INFO com.example.spring.jwt.mongodb.scriptshell.UnixScriptExecutor [http-nio-8080-exec-3] reading Started
+2023-04-13 13:59:27,027 INFO org.apache.catalina.core.StandardService [Thread-21] Stopping service [Tomcat]
+2023-04-13 13:59:27,028 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [Thread-21] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-13 13:59:27,031 WARN org.apache.catalina.loader.WebappClassLoaderBase [Thread-21] The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6437bb4600520d1294aea1e4', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(DefaultServerMonitor.java:300)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:281)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:179)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-04-13 13:59:27,032 WARN org.apache.catalina.loader.WebappClassLoaderBase [Thread-21] The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='6437bb4600520d1294aea1e4', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.waitForNext(DefaultServerMonitor.java:443)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.access$1500(DefaultServerMonitor.java:64)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeRunnable.run(DefaultServerMonitor.java:415)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-04-13 13:59:27,033 WARN org.apache.catalina.loader.WebappClassLoaderBase [Thread-21] The web application [ROOT] appears to have started a thread named [MaintenanceTimer-3-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-04-13 13:59:27,043 INFO org.spark_project.jetty.server.AbstractConnector [Thread-21] Stopped Spark@1e62a010{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2023-04-13 13:59:27,052 INFO org.apache.spark.ui.SparkUI [Thread-21] Stopped Spark web UI at http://192.168.1.125:4040
+2023-04-13 13:59:27,058 INFO org.apache.spark.MapOutputTrackerMasterEndpoint [dispatcher-event-loop-1] MapOutputTrackerMasterEndpoint stopped!
+2023-04-13 13:59:27,068 INFO org.apache.spark.storage.memory.MemoryStore [Thread-21] MemoryStore cleared
+2023-04-13 13:59:27,068 INFO org.apache.spark.storage.BlockManager [Thread-21] BlockManager stopped
+2023-04-13 13:59:27,069 INFO org.apache.spark.storage.BlockManagerMaster [Thread-21] BlockManagerMaster stopped
+2023-04-13 13:59:27,070 INFO org.apache.spark.scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint [dispatcher-event-loop-2] OutputCommitCoordinator stopped!
+2023-04-13 13:59:27,085 INFO org.apache.spark.SparkContext [Thread-21] Successfully stopped SparkContext
+2023-04-13 13:59:27,085 INFO org.apache.spark.SparkContext [Thread-21] SparkContext already stopped.
+2023-04-13 13:59:27,086 INFO com.zaxxer.hikari.HikariDataSource [Thread-21] HikariPool-2 - Shutdown initiated...
+2023-04-13 13:59:27,105 INFO com.zaxxer.hikari.HikariDataSource [Thread-21] HikariPool-2 - Shutdown completed.
+2023-04-13 13:59:27,349 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] Starting SpringBootSecurityJwtMongodbApplication using Java 17.0.6 on wks-012 with PID 19574 (/home/inferyx/git/SpringApplicationWithSecurity/target/classes started by inferyx in /home/inferyx/git/SpringApplicationWithSecurity)
+2023-04-13 13:59:27,350 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 13:59:27,963 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2023-04-13 13:59:27,964 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-04-13 13:59:28,002 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-13 13:59:28,061 INFO org.mongodb.driver.client [restartedMain] MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.0-69-generic"}, "platform": "Java/Eclipse Adoptium/17.0.6+10"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@5c911de6]}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2023-04-13 13:59:28,066 INFO org.mongodb.driver.connection [cluster-ClusterId{value='6437bd6800520d1294aea1e5', description='null'}-localhost:27017] Opened connection [connectionId{localValue:6, serverValue:34}] to localhost:27017
+2023-04-13 13:59:28,066 INFO org.mongodb.driver.cluster [cluster-ClusterId{value='6437bd6800520d1294aea1e5', description='null'}-localhost:27017] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3065409}
+2023-04-13 13:59:28,067 INFO org.mongodb.driver.connection [cluster-rtt-ClusterId{value='6437bd6800520d1294aea1e5', description='null'}-localhost:27017] Opened connection [connectionId{localValue:7, serverValue:35}] to localhost:27017
+2023-04-13 13:59:28,303 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-13 13:59:28,330 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2023-04-13 13:59:28,399 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2023-04-13 13:59:28,400 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-13 13:59:28,496 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-13 13:59:28,683 INFO org.apache.spark.SparkContext [restartedMain] Running Spark version 2.4.5
+2023-04-13 13:59:28,685 INFO org.apache.spark.SparkContext [restartedMain] Submitted application: MyAppName
+2023-04-13 13:59:28,687 INFO org.apache.spark.SecurityManager [restartedMain] Changing view acls to: inferyx
+2023-04-13 13:59:28,687 INFO org.apache.spark.SecurityManager [restartedMain] Changing modify acls to: inferyx
+2023-04-13 13:59:28,687 INFO org.apache.spark.SecurityManager [restartedMain] Changing view acls groups to: 
+2023-04-13 13:59:28,688 INFO org.apache.spark.SecurityManager [restartedMain] Changing modify acls groups to: 
+2023-04-13 13:59:28,688 INFO org.apache.spark.SecurityManager [restartedMain] SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(inferyx); groups with view permissions: Set(); users  with modify permissions: Set(inferyx); groups with modify permissions: Set()
+2023-04-13 13:59:28,771 INFO org.apache.spark.util.Utils [restartedMain] Successfully started service 'sparkDriver' on port 38069.
+2023-04-13 13:59:28,780 INFO org.apache.spark.SparkEnv [restartedMain] Registering MapOutputTracker
+2023-04-13 13:59:28,782 INFO org.apache.spark.SparkEnv [restartedMain] Registering BlockManagerMaster
+2023-04-13 13:59:28,783 INFO org.apache.spark.storage.BlockManagerMasterEndpoint [restartedMain] Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2023-04-13 13:59:28,784 INFO org.apache.spark.storage.BlockManagerMasterEndpoint [restartedMain] BlockManagerMasterEndpoint up
+2023-04-13 13:59:28,785 INFO org.apache.spark.storage.DiskBlockManager [restartedMain] Created local directory at /tmp/blockmgr-441250d6-99f0-46c5-8c66-c33defc9b643
+2023-04-13 13:59:28,786 INFO org.apache.spark.storage.memory.MemoryStore [restartedMain] MemoryStore started with capacity 998.4 MB
+2023-04-13 13:59:28,789 INFO org.apache.spark.SparkEnv [restartedMain] Registering OutputCommitCoordinator
+2023-04-13 13:59:28,812 INFO org.spark_project.jetty.server.Server [restartedMain] jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+2023-04-13 13:59:28,821 INFO org.spark_project.jetty.server.Server [restartedMain] Started @880476ms
+2023-04-13 13:59:28,827 INFO org.spark_project.jetty.server.AbstractConnector [restartedMain] Started ServerConnector@1038328e{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2023-04-13 13:59:28,827 INFO org.apache.spark.util.Utils [restartedMain] Successfully started service 'SparkUI' on port 4040.
+2023-04-13 13:59:28,828 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@633cac45{/jobs,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,830 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@7be418f1{/jobs/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,831 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@4346f18d{/jobs/job,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,832 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@12bb1729{/jobs/job/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,838 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@14e3cfbf{/stages,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,839 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@4f1b7e42{/stages/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,840 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@3ba534b5{/stages/stage,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,841 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@716d7eb7{/stages/stage/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,842 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@7bf9d912{/stages/pool,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,843 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@6f045141{/stages/pool/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,844 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@7d96c088{/storage,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,845 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@6714814b{/storage/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,845 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@5290e5f2{/storage/rdd,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,846 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@1f5338b8{/storage/rdd/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,847 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@548a295a{/environment,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,848 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@17d7e459{/environment/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,849 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@42bd2c24{/executors,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,851 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@44ad5a33{/executors/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,853 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@41686b05{/executors/threadDump,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,854 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@6935ba5d{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,856 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@42c27753{/static,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,857 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@6c90d1fa{/,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,858 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@6ea2bf2e{/api,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,859 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@7ba89509{/jobs/job/kill,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,860 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@11dd8487{/stages/stage/kill,null,AVAILABLE,@Spark}
+2023-04-13 13:59:28,861 INFO org.apache.spark.ui.SparkUI [restartedMain] Bound SparkUI to 0.0.0.0, and started at http://192.168.1.125:4040
+2023-04-13 13:59:28,908 INFO org.apache.spark.executor.Executor [restartedMain] Starting executor ID driver on host localhost
+2023-04-13 13:59:28,916 INFO org.apache.spark.util.Utils [restartedMain] Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37221.
+2023-04-13 13:59:28,917 INFO org.apache.spark.network.netty.NettyBlockTransferService [restartedMain] Server created on 192.168.1.125:37221
+2023-04-13 13:59:28,917 INFO org.apache.spark.storage.BlockManager [restartedMain] Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2023-04-13 13:59:28,918 INFO org.apache.spark.storage.BlockManagerMaster [restartedMain] Registering BlockManager BlockManagerId(driver, 192.168.1.125, 37221, None)
+2023-04-13 13:59:28,918 INFO org.apache.spark.storage.BlockManagerMasterEndpoint [dispatcher-event-loop-2] Registering block manager 192.168.1.125:37221 with 998.4 MB RAM, BlockManagerId(driver, 192.168.1.125, 37221, None)
+2023-04-13 13:59:28,919 INFO org.apache.spark.storage.BlockManagerMaster [restartedMain] Registered BlockManager BlockManagerId(driver, 192.168.1.125, 37221, None)
+2023-04-13 13:59:28,921 INFO org.apache.spark.storage.BlockManager [restartedMain] Initialized BlockManager: BlockManagerId(driver, 192.168.1.125, 37221, None)
+2023-04-13 13:59:28,923 INFO org.spark_project.jetty.server.handler.ContextHandler [restartedMain] Started o.s.j.s.ServletContextHandler@4ca462ff{/metrics/json,null,AVAILABLE,@Spark}
+2023-04-13 13:59:30,287 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] Started SpringBootSecurityJwtMongodbApplication in 2.999 seconds (JVM running for 881.943)
+2023-04-13 13:59:30,293 INFO com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] This is a info message
+2023-04-13 13:59:30,294 WARN com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] This is a warn message
