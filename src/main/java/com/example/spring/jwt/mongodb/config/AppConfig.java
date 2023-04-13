@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import com.example.spring.jwt.mongodb.factory.ScriptExecutionFactory;
 import com.example.spring.jwt.mongodb.scriptshell.PythonScriptExecutor;
 
-
+//AppConfig
 @Configuration
 public class AppConfig 
 {
