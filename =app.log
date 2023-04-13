@@ -4294,3 +4294,54 @@ org.springframework.mail.MailSendException: Failed messages: javax.mail.SendFail
 2023-04-13 13:25:46,984 WARN com.example.spring.jwt.mongodb.SpringBootSecurityJwtMongodbApplication [restartedMain] This is a warn message
 2023-04-13 13:25:52,345 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-04-13 13:25:53,626 INFO org.springdoc.api.AbstractOpenApiResource [http-nio-8080-exec-9] Init duration for springdoc-openapi is: 592 ms
+2023-04-13 13:27:40,353 INFO org.apache.catalina.core.StandardService [RMI TCP Connection(4)-127.0.0.1] Stopping service [Tomcat]
+2023-04-13 13:27:40,356 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [RMI TCP Connection(4)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-13 13:27:40,359 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(4)-127.0.0.1] The web application [ROOT] appears to have started a thread named [BufferPoolPruner-1-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-04-13 13:27:40,361 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(4)-127.0.0.1] The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='6437b57b724d536e220fd521', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(DefaultServerMonitor.java:300)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:281)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:179)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-04-13 13:27:40,362 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(4)-127.0.0.1] The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='6437b57b724d536e220fd521', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.waitForNext(DefaultServerMonitor.java:443)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.access$1500(DefaultServerMonitor.java:64)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeRunnable.run(DefaultServerMonitor.java:415)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-04-13 13:27:40,363 WARN org.apache.catalina.loader.WebappClassLoaderBase [RMI TCP Connection(4)-127.0.0.1] The web application [ROOT] appears to have started a thread named [MaintenanceTimer-2-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.6/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.6/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.6/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-04-13 13:27:40,409 INFO org.apache.spark.storage.DiskBlockManager [Thread-7] Shutdown hook called
+2023-04-13 13:27:40,417 INFO org.spark_project.jetty.server.AbstractConnector [RMI TCP Connection(4)-127.0.0.1] Stopped Spark@550a37f7{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2023-04-13 13:27:40,420 INFO org.apache.spark.ui.SparkUI [RMI TCP Connection(4)-127.0.0.1] Stopped Spark web UI at http://192.168.1.125:4040
+2023-04-13 13:27:40,422 INFO org.apache.spark.util.ShutdownHookManager [Thread-7] Shutdown hook called
+2023-04-13 13:27:40,425 INFO org.apache.spark.util.ShutdownHookManager [Thread-7] Deleting directory /tmp/spark-ab0d3501-b322-4f22-8142-cc4cd8305c2a/userFiles-bea87994-452f-45d3-a5f8-67787940b6c8
+2023-04-13 13:27:40,431 INFO org.apache.spark.util.ShutdownHookManager [Thread-7] Deleting directory /tmp/spark-ab0d3501-b322-4f22-8142-cc4cd8305c2a
+2023-04-13 13:27:40,461 INFO org.apache.spark.MapOutputTrackerMasterEndpoint [dispatcher-event-loop-1] MapOutputTrackerMasterEndpoint stopped!
+2023-04-13 13:27:40,473 INFO org.apache.spark.storage.memory.MemoryStore [RMI TCP Connection(4)-127.0.0.1] MemoryStore cleared
+2023-04-13 13:27:40,475 INFO org.apache.spark.storage.BlockManager [RMI TCP Connection(4)-127.0.0.1] BlockManager stopped
+2023-04-13 13:27:40,478 INFO org.apache.spark.storage.BlockManagerMaster [RMI TCP Connection(4)-127.0.0.1] BlockManagerMaster stopped
+2023-04-13 13:27:40,485 INFO org.apache.spark.scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint [dispatcher-event-loop-2] OutputCommitCoordinator stopped!
+2023-04-13 13:27:40,559 INFO org.apache.spark.SparkContext [RMI TCP Connection(4)-127.0.0.1] Successfully stopped SparkContext
+2023-04-13 13:27:40,561 INFO org.apache.spark.SparkContext [RMI TCP Connection(4)-127.0.0.1] SparkContext already stopped.
+2023-04-13 13:27:40,568 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-04-13 13:27:40,583 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
