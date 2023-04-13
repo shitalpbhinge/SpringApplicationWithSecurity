@@ -6,7 +6,7 @@ import org.apache.spark.sql.SparkSession;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+//spark class
 @Configuration
 public class SparkConfig {
 
