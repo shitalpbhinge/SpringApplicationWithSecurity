@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.BookDesignFactoryMethod.database.Database;
-import com.example.BookDesignFactoryMethod.entity.Book;
-import com.example.BookDesignFactoryMethod.repository.BookRepositoryMongo;
-import com.example.BookDesignFactoryMethod.repository.BookRepositorysql;
-import com.example.BookDesignFactoryMethod.type.DatabaseType;
+import com.example.spring.jwt.mongodb.entity.Book;
+import com.example.spring.jwt.mongodb.factory.DatabaseType;
+import com.example.spring.jwt.mongodb.interfaces.Database;
+
+
 @CrossOrigin("http://localhost:8080")
 @RestController
 @RequestMapping("/api")

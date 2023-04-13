@@ -3,7 +3,8 @@ package com.example.spring.jwt.mongodb.interfaces;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.BookDesignFactoryMethod.entity.Book;
+import com.example.spring.jwt.mongodb.entity.Book;
+
 
 public interface Database 
 {

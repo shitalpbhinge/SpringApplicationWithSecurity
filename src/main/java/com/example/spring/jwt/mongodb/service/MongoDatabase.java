@@ -10,9 +10,11 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
-import com.example.BookDesignFactoryMethod.database.Database;
-import com.example.BookDesignFactoryMethod.entity.Book;
-import com.example.BookDesignFactoryMethod.exception.CustomDatabaseException;
+import com.example.spring.jwt.mongodb.entity.Book;
+import com.example.spring.jwt.mongodb.exception.CustomDatabaseException;
+import com.example.spring.jwt.mongodb.interfaces.Database;
+
+
 
 @Repository
 public class MongoDatabase implements Database {

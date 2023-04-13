@@ -6,8 +6,8 @@ import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.example.BookDesignFactoryMethod.database.Database;
-import com.example.BookDesignFactoryMethod.entity.Book;
+import com.example.spring.jwt.mongodb.entity.Book;
+import com.example.spring.jwt.mongodb.interfaces.Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
