@@ -1,6 +1,4 @@
 package com.example.spring.jwt.mongodb.entity;
-
-
 public class EmailRequest 
 {
 

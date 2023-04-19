@@ -14,7 +14,7 @@ public class SpringBootSecurityJwtMongodbApplication
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(SpringBootSecurityJwtMongodbApplication.class, args);
-		logger.info("This is a info message");
+		  logger.info("This is a info message");
 		  logger.debug("This is a debug message");
 		  logger.warn("This is a warn message");
 		  Set<Thread> threads = Thread.getAllStackTraces().keySet();
