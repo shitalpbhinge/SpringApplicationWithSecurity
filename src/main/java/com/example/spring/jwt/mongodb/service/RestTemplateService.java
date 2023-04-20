@@ -25,54 +25,86 @@ public class RestTemplateService
 	private static final String create_Employee_URL="http://localhost:8080/RestTemplateApi/addEmployee";
 	private static final String get_EmployeeById_URL="http://localhost:8080/RestTemplateApi/getEmployee/{employeeId}";
 	private static final String update_Employee_URL="http://localhost:8080/RestTemplateApi/UpdateEmployee";
-	private static final String delete_Employee_By_Id_URL="http://localhost:8080/RestTemplateApi/deleteEmployee/{employeeId}";
+	private static final String delete_Employee_By_Id_URL="http://localhost:8080/RestTemplateApi/deleteEmployee";
 
+	String username = "shitalbhinge";
+	String password = "12345678910";
+	String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl0YWxiaGluZ2UiLCJpYXQiOjE2ODE5NzE5MTEsImV4cCI6MTY4MTk3MzcxMX0.x1pVLtgYYb5XJQk_LgD9ONc_iyEukOBHjNMPocNfkYogvQOanvJNRjbRx9ZPlQFruJMB_MYOWa2RF1Gi3MDbzw";
+	
+	
+	
 	//Method to get all employee
 	public ResponseEntity<String> allEmployee()
 	{
 		HttpHeaders headers=new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-		//headers.add("Autherization",HeadersToken);//for spring security
+		headers.setBasicAuth(username, password);//for spring security
+		headers.set("Authorization", "Bearer " + token);
 		HttpEntity<String> entity=new HttpEntity<String>("parameters",headers);
-		ResponseEntity<String> responce=restTemplate.exchange(get_all_Employee_URL, HttpMethod.GET, entity, String.class);
-		return responce;
+		ResponseEntity<String> response=restTemplate.exchange(get_all_Employee_URL, HttpMethod.GET, entity, String.class);
+		return response;
 		
 	}
-	public ResponseEntity<Employee> createEmployee(Employee employee)
+	/*public ResponseEntity<Employee> createEmployee(Employee employee)
 	{
 		return restTemplate.postForEntity(create_Employee_URL, employee, Employee.class);	
+	}*/
+	public ResponseEntity<Employee> createEmployee(Employee employee) 
+	{
+	    HttpHeaders headers = new HttpHeaders();
+	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		headers.setBasicAuth(username, password);
+	    headers.set("Authorization", "Bearer " + token);
+	    HttpEntity<Employee> request = new HttpEntity<>(employee, headers);
+	    return restTemplate.postForEntity(create_Employee_URL, request, Employee.class);
 	}
 	public Employee getEmployeeById(int employeeId) 
 	{
-		Map<String, Integer> param=new HashMap<String,Integer>();
-		param.put("employeeId", employeeId);
-		return restTemplate.getForObject(get_EmployeeById_URL,Employee.class, param);
-		// TODO Auto-generated method stub
-		
+	    // Set up authentication headers
+	    HttpHeaders headers = new HttpHeaders();
+	    headers.setBearerAuth(token);
+
+	    // Set up request parameters
+	    Map<String, Integer> param = new HashMap<>();
+	    param.put("employeeId", employeeId);
+
+	    // Create a new HttpEntity with the headers and parameters
+	    HttpEntity<Map<String,Integer>> entity = new HttpEntity<>(param, headers);
+
+	    // Make the API call with the authenticated entity
+	    ResponseEntity<Employee> response = restTemplate.exchange(get_EmployeeById_URL, HttpMethod.GET, entity, Employee.class);
+
+	    // Return the Employee object from the response body
+	    return response.getBody();
 	}
+
+
 	/*public void  updateEmployee(Employee employee) 
 	{
 		restTemplate.put(update_Employee_URL,employee);	
 	}*/
-	public void deleteEmployeeById(int employeeId) 
+	/*public void deleteEmployeeById(int employeeId) 
 	{
 		Map<String, Integer> param=new HashMap<String,Integer>();
 		param.put("employeeId", employeeId);
 		restTemplate.delete(delete_Employee_By_Id_URL, employeeId);
+	}*/
+	
+	public ResponseEntity<String> deleteEmployeeById(int employeeId) {
+	    HttpHeaders headers = new HttpHeaders();
+	    headers.setBearerAuth(token);
+	    HttpEntity<String> entity = new HttpEntity<>(headers);
+	    ResponseEntity<String> response = restTemplate.exchange(delete_Employee_By_Id_URL + "/"+employeeId, HttpMethod.DELETE, entity, String.class, employeeId); 
+	    return response;
 	}
-	public void updateEmployee(int employeeId, Employee employeeDetails) {
+	public ResponseEntity<String> updateEmployee(int employeeId, Employee employeeDetails) 
+	{
 	    HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
-
+	    headers.setBearerAuth(token);
 	    HttpEntity<Employee> request = new HttpEntity<>(employeeDetails, headers);
-
 	    ResponseEntity<String> response = restTemplate.exchange(update_Employee_URL + "/" + employeeId, HttpMethod.PUT, request, String.class);
-
-	    if (response.getStatusCode() == HttpStatus.OK) {
-	        System.out.println("Employee updated");
-	    } else {
-	        System.out.println("Failed to update employee");
-	    }
+	    return response;
 	}
 
 
