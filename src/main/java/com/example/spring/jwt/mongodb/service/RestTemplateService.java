@@ -23,13 +23,13 @@ public class RestTemplateService
 	RestTemplate restTemplate=new RestTemplate();
 	private static final String get_all_Employee_URL="http://localhost:8080/RestTemplateApi/getAllEmployee";
 	private static final String create_Employee_URL="http://localhost:8080/RestTemplateApi/addEmployee";
-	private static final String get_EmployeeById_URL="http://localhost:8080/RestTemplateApi/getEmployee/{employeeId}";
+	private static final String get_EmployeeById_URL="http://localhost:8080/RestTemplateApi/getEmployee";
 	private static final String update_Employee_URL="http://localhost:8080/RestTemplateApi/UpdateEmployee";
 	private static final String delete_Employee_By_Id_URL="http://localhost:8080/RestTemplateApi/deleteEmployee";
 
 	String username = "shitalbhinge";
 	String password = "12345678910";
-	String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl0YWxiaGluZ2UiLCJpYXQiOjE2ODE5NzE5MTEsImV4cCI6MTY4MTk3MzcxMX0.x1pVLtgYYb5XJQk_LgD9ONc_iyEukOBHjNMPocNfkYogvQOanvJNRjbRx9ZPlQFruJMB_MYOWa2RF1Gi3MDbzw";
+	String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGl0YWxiaGluZ2UiLCJpYXQiOjE2ODIwNTQxNTEsImV4cCI6MTY4MjA1NTk1MX0.vxvBL8x4NFHMsuNhEd5mP8DpIpDVSmmjQKGYEVe_U8eG0ql7nouI5yv32lb785FJ7YB22KzIUt3BwnblomWOVQ";
 	
 	
 	
@@ -72,7 +72,7 @@ public class RestTemplateService
 	    HttpEntity<Map<String,Integer>> entity = new HttpEntity<>(param, headers);
 
 	    // Make the API call with the authenticated entity
-	    ResponseEntity<Employee> response = restTemplate.exchange(get_EmployeeById_URL, HttpMethod.GET, entity, Employee.class);
+	    ResponseEntity<Employee> response = restTemplate.exchange(get_EmployeeById_URL+ "/"+employeeId, HttpMethod.GET, entity, Employee.class);
 
 	    // Return the Employee object from the response body
 	    return response.getBody();
@@ -97,13 +97,13 @@ public class RestTemplateService
 	    ResponseEntity<String> response = restTemplate.exchange(delete_Employee_By_Id_URL + "/"+employeeId, HttpMethod.DELETE, entity, String.class, employeeId); 
 	    return response;
 	}
-	public ResponseEntity<String> updateEmployee(int employeeId, Employee employeeDetails) 
+	public ResponseEntity<Employee> updateEmployee(int employeeId, Employee employeeDetails) 
 	{
 	    HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_JSON);
 	    headers.setBearerAuth(token);
 	    HttpEntity<Employee> request = new HttpEntity<>(employeeDetails, headers);
-	    ResponseEntity<String> response = restTemplate.exchange(update_Employee_URL + "/" + employeeId, HttpMethod.PUT, request, String.class);
+	    ResponseEntity<Employee> response = restTemplate.exchange(update_Employee_URL + "/" + employeeId, HttpMethod.PUT, request, Employee.class);
 	    return response;
 	}
 
