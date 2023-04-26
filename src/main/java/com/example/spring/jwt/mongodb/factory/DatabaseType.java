@@ -7,9 +7,6 @@ import org.springframework.stereotype.Service;
 import com.example.spring.jwt.mongodb.interfaces.Database;
 import com.example.spring.jwt.mongodb.service.MongoDatabase;
 import com.example.spring.jwt.mongodb.service.SqlDatabase;
-
-
-
 @Component
 public class DatabaseType 
 {

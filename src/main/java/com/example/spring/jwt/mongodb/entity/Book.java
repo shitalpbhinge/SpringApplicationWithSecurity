@@ -3,6 +3,7 @@ package com.example.spring.jwt.mongodb.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+//@Table(name="booksdata")
 public class Book 
 {
 	@Id
