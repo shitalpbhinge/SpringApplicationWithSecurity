@@ -3,11 +3,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-
 import com.example.spring.jwt.mongodb.entity.UserDemo;
 import com.example.spring.jwt.mongodb.repository.UserRepositoryDemo;
-
-
 @Component
 public class KafkaProducerDemo 
 {
@@ -24,6 +21,5 @@ public class KafkaProducerDemo
 				{
 					kafkaTemplate.send("my-topic", user);
 				}
-		}
-		
+		}		
 }

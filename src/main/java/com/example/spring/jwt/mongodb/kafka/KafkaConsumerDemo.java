@@ -3,17 +3,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
-
 import com.example.spring.jwt.mongodb.entity.UserDemo;
 import com.example.spring.jwt.mongodb.entity.User_Copy;
 import com.example.spring.jwt.mongodb.repository.UserRepositoryCopy;
-
-
 @Component
 public class KafkaConsumerDemo 
 {
-
-		
 		@Autowired
 		UserRepositoryCopy userRepositoryCopy;
 		
@@ -31,8 +26,4 @@ public class KafkaConsumerDemo
 			
 			   userRepositoryCopy.save(userc); 
 	    }
-		
-	
-
-
 }
