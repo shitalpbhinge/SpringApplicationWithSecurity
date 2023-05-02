@@ -1,6 +1,8 @@
 package com.example.spring.jwt.mongodb.controllers;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.spring.jwt.mongodb.entity.Book;
@@ -35,8 +38,35 @@ public class BookController
 	
 	@Autowired
 	DatabaseType dbtype;
-		
+	
 	@GetMapping
+	@ResponseBody
+	public List<Book> getBooks(@RequestParam("type") String type) {
+	    try {
+	        logger.info("Getting All Books");
+	        Database db = dbtype.getBookRepository(type);
+	        List<Book> books = db.getBook();
+	        return books;
+	    } catch(Exception e) {
+	        logger.error("Exception occurred while getting books: ", e);
+	        return Collections.emptyList();
+	    }
+	}
+	@PostMapping("/add/{type}")
+	@ResponseBody
+	public ResponseEntity<String> addBook(@RequestBody Book book, @PathVariable String type) {
+	    try {
+	        logger.info("Adding Book");
+	        Database db = dbtype.getBookRepository(type);
+	        db.addBook(book);
+	        return ResponseEntity.ok("Book added");
+	    } catch (Exception e) {
+	        logger.error("Exception occurred while adding book: ", e);
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add Book");
+	    }
+	}
+
+	/*@GetMapping
 	public String getBooks(@RequestParam("type") String type) 
 	{
 		try {
@@ -49,8 +79,8 @@ public class BookController
 			logger.error("Exception occurred while getting books: ", e);
 			return "Failed to get Books";
 		}
-	}
-	@PostMapping("/add/{type}")
+	}*/
+	/*@PostMapping("/add/{type}")
 	public String addBook(@RequestBody Book book,@PathVariable String type) {
 		try {
 			logger.info("Adding Book");
@@ -62,9 +92,22 @@ public class BookController
 			logger.error("Exception occurred while adding book: ", e);
 			return "Failed to add Book";
 		}
+	}*/
+	@GetMapping("/{id}")
+	@ResponseBody
+	public ResponseEntity<Optional<Book>> getBookById(@PathVariable String id, @RequestParam("type") String type) {
+	    try {
+	        logger.info("Getting Book by id");
+	        Database db = dbtype.getBookRepository(type);
+	        Optional<Book> book = db.getBookById(id);
+	        return ResponseEntity.ok(book);
+	    } catch (Exception e) {
+	        logger.error("Exception occurred while getting book by id: ", e);
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+	    }
 	}
 
-	@GetMapping("/{id}")
+	/*@GetMapping("/{id}")
 	 public String getUserById(@PathVariable String id, @RequestParam("type") String type)
 	 {
 		try {
@@ -77,7 +120,7 @@ public class BookController
 			logger.error("Exception occurred while getting book by id: ", e);
 			return "Failed to get Book by id";
 		}
-	 }
+	 }*/
 
 	@PutMapping("/{id}/{type}")
 	 public String updateUser(@PathVariable String id, @PathVariable String type, @RequestBody Book book)

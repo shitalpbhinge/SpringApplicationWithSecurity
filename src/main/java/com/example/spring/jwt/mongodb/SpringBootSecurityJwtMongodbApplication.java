@@ -4,8 +4,12 @@ import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+import com.amazonaws.services.budgets.model.TimeUnit;
 
 @SpringBootApplication
 public class SpringBootSecurityJwtMongodbApplication 
@@ -26,6 +30,8 @@ public class SpringBootSecurityJwtMongodbApplication
 	            String type = t.isDaemon() ? "Daemon" : "Normal";
 	            System.out.printf("%-20s \t %s \t %d \t %s\n", name, state, priority, type);
 	        }
+	      
+	       
 	}
 
 }
